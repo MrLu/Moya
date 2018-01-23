@@ -15,7 +15,9 @@ public extension URL {
         if let query = target.query, !query.isEmpty {
             var components = URLComponents(url: self, resolvingAgainstBaseURL: false)
             components?.query = query
-            self = components?.url
+            if let url = components?.url {
+                self = url
+            }
         }
     }
 }

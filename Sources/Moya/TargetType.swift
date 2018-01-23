@@ -33,4 +33,9 @@ public extension TargetType {
     var validate: Bool {
         return false
     }
+    
+    /// The query
+    var query: String? {
+        return nil
+    }
 }
