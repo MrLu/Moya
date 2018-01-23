@@ -23,6 +23,9 @@ public protocol TargetType {
 
     /// The headers to be used in the request.
     var headers: [String: String]? { get }
+    
+    /// The query
+    var query: String? {get}
 }
 
 public extension TargetType {

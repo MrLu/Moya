@@ -12,5 +12,10 @@ public extension URL {
         } else {
             self = target.baseURL.appendingPathComponent(target.path)
         }
+        if let query = target.query, !query.isEmpty {
+            var components = URLComponents(url: self, resolvingAgainstBaseURL: false)
+            components?.query = query
+            self = components?.url
+        }
     }
 }
